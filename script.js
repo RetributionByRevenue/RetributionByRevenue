@@ -71,7 +71,7 @@
                }
              },
              title: {
-              text: "Balance",
+              text: "Day of The Year",
               style: {
                 color: "#FFFFFF"
               }
