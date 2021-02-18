@@ -57,7 +57,16 @@ body{
 }
 #chart{
     margin-right: 2rem;
+    pointer-events:all;
 }
+
+#chart:hover {
+	background-color: transparent;
+}
+#chart:active {
+	pointer-events: none;
+}
+
 /*///////////////////////*/
 #dataDisplay{
     font-size: 2rem;
