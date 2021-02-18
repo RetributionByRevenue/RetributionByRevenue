@@ -3,11 +3,10 @@
        //https://spreadsheets.google.com/feeds/cells/1IneAA3Q68GV1Kl4uei-FWPFfiVSvF6xWSr2B7ks-cqg/1/public/full?alt=json   
        // Make sure it is public or set to Anyone with link can view 
        var url = "https://spreadsheets.google.com/feeds/cells/" + spreadsheetID + "/1/public/full?alt=json"; //this is the part that's changed
-       var myjson         
-       $.getJSON(url, callbackFuncWithData);
-       let s = [];
-       function callbackFuncWithData(data)
-       {
+       var myjson       
+       function everyting(){$.getJSON(url, function(data){
+        
+        let s = [];
         let netWorthArray = []
         values=data.feed.entry
 
@@ -63,10 +62,26 @@
            },
            xaxis:{
             labels: {
+              
+                show: false,
+              
+              
                style: {
                  colors: "#FFFFFF"
                }
              },
+             title: {
+              text: "Balance",
+              style: {
+                color: "#FFFFFF"
+              }
+            },
+            axisTicks: {
+              show: false
+            },
+            tooltip: {
+              enabled: false
+            }
          },
          yaxis:[
             {
@@ -107,5 +122,11 @@
     $('.youtubePic').click(function(){
         window.open('https://www.youtube.com/channel/UCFGPA5ZV9BZIhR7w8EbS-hg', '_blank'); 
     })
-       
-       }        
+    setInterval(everyting,30000)
+  }
+
+);
+}
+  everyting();
+  
+  //setInterval(callbackFuncWithData, 30000);        
