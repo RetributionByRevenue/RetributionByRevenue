@@ -23,7 +23,7 @@ jQuery.extend({
               $('#currentBalance').text(temp);
               document.title=temp;
 
-              console.log(temp)
+              //console.log(temp)
           }
       });
     //setTimeout($.getValues, 29000)
