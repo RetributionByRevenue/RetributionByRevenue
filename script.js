@@ -20,7 +20,7 @@ jQuery.extend({
               result = data;
               temp = (result.feed.entry[0].content.$t)
               $('#currentBalance').text((parseFloat(temp).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
-              document.title=(parseFloat(temp).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
+              document.title='$'+(parseFloat(temp).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
               //console.log(temp)
           }
       });
