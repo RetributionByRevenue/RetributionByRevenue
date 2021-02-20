@@ -68,7 +68,7 @@ function applyDom(){
   let usdHoldings = parseFloat(holdings[0]).toFixed(3);
   let ethHoldings = holdings[1];
 
-  $('#renkoBrick').html(usdHoldings+"<br> Eth: "+ethHoldings);
+  $('#renkoBrick').html(usdHoldings+"<br> ETH: "+ethHoldings);
   $('#timestamp').html(s[3]);
   window.values = netWorthArray
   //setTimeout(applyDom(),80000)
