@@ -6,8 +6,7 @@
   var myjson
 
 
-let global = new Array(1).fill({'hello':'goodbye'});
-//let global = {}
+
 jQuery.extend({
   getValues: function(url) {
       var result = null;
@@ -20,9 +19,8 @@ jQuery.extend({
           success: function(data) {
               result = data;
               temp = (result.feed.entry[0].content.$t)
-              $('#currentBalance').text(temp);
-              document.title=temp;
-
+              $('#currentBalance').text((parseFloat(temp).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
+              document.title=(parseFloat(temp).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
               //console.log(temp)
           }
       });
@@ -30,10 +28,6 @@ jQuery.extend({
     return result;
   }
 });
-
-
-
-
 
 
 
@@ -74,7 +68,7 @@ function applyDom(){
   let usdHoldings = parseFloat(holdings[0]).toFixed(3);
   let ethHoldings = holdings[1];
 
-  $('#renkoBrick').html(usdHoldings+" Eth: "+ethHoldings);
+  $('#renkoBrick').html(usdHoldings+"<br> Eth: "+ethHoldings);
   $('#timestamp').html(s[3]);
   window.values = netWorthArray
   //setTimeout(applyDom(),80000)
