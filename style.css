@@ -78,3 +78,32 @@ body{
 #dataDisplay h3{
     text-align: center;
 }
+
+
+@keyframes animationName {
+    10%   { opacity:1; }
+    50%  { opacity:0.5; }
+    90% { opacity:1; }
+  }
+  @-o-keyframes animationName{
+    10%   { opacity:1; }
+    50%  { opacity:0.5; }
+    90% { opacity:1; }
+  }
+  @-moz-keyframes animationName{
+    10%   { opacity:1; }
+    50%  { opacity:0.5; }
+    90% { opacity:1; }
+  }
+  @-webkit-keyframes animationName{
+    10%   { opacity:1; }
+    50%  { opacity:0.5; }
+    90% { opacity:1; }
+  }   
+  .elementToFadeInAndOut {
+     -webkit-animation: animationName 3s infinite;
+     -moz-animation: animationName 3s infinite;
+     -o-animation: animationName 3s infinite;
+      animation: animationName 3s infinite;
+  }
+
