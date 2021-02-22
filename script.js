@@ -33,8 +33,8 @@ jQuery.extend({
           dataType: 'json',
           async: false,
           success: function(data) {
-            temp = (parseFloat(data.asks[0][0]).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
-            $(".apexcharts-title-text").text("Live Eth Price: $"+temp)
+            temp = "Live Eth Price: $"+(parseFloat(data.asks[0][0]).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
+            $(".apexcharts-title-text").text(temp)
               result = data
           }
       });
@@ -141,7 +141,7 @@ markers: {
   }
 },
 title: {
-  text: $.getEth().asks[0][0],
+  text: "Live Eth Price: $"+parseFloat($.getEth().asks[0][0]).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
   align: 'left',
   margin: 10,
   offsetX: 90,
