@@ -90,9 +90,14 @@ function applyDom(){
   };
   let holdings = s[2].split("!");
   let usdHoldings = parseFloat(holdings[0]).toFixed(3);
+  let ethStringInclude = s[2].includes("e",0)
   let ethHoldings = holdings[1];
-
-  $('#renkoBrick').html(usdHoldings+"<br> ETH: "+ethHoldings);
+  if (ethStringInclude){
+    $('#renkoBrick').html(usdHoldings+"<br> ETH: 0.00");
+  }
+  else{
+    $('#renkoBrick').html(usdHoldings+"<br> ETH: "+ethHoldings);
+  }
   $('#timestamp').html(s[3]);
   window.values = netWorthArray
   //setTimeout(applyDom(),80000)
