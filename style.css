@@ -121,6 +121,13 @@ body{
     animation: animationName 3s infinite;
 }
 
+.apexcharts-title-text{
+    -webkit-animation: animationName 3s infinite;
+    -moz-animation: animationName 3s infinite;
+    -o-animation: animationName 3s infinite;
+    animation: animationName 3s infinite;
+}
+
 @media screen and (max-width: 425px) {
     #infoData{
         display: grid;
