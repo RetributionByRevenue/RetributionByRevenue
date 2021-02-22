@@ -35,6 +35,7 @@ jQuery.extend({
           success: function(data) {
             temp = "Live Eth Price: $"+(parseFloat(data.asks[0][0]).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
             result = data
+            $(".apexcharts-title-text").text(temp)
           }
       });
     return result;
@@ -200,4 +201,3 @@ yaxis:[
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
-$(".apexcharts-title-text").text(temp)
