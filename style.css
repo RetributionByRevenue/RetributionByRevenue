@@ -11,7 +11,7 @@ body{
     background-image: url(moving_background.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
 }
 
 #companyName{ 
@@ -69,14 +69,16 @@ body{
 
 /*///////////////////////*/
 #dataDisplay{
+    padding-top: 3rem;
     font-size: 2rem;
     color: white;
     font-weight: bold;
     width: 50%;
     margin: 0 auto;
 }
-#dataDisplay h3{
-    text-align: center;
+#dataDisplay h6{
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -84,26 +86,66 @@ body{
     10%   { opacity:1; }
     50%  { opacity:0.5; }
     90% { opacity:1; }
-  }
-  @-o-keyframes animationName{
-    10%   { opacity:1; }
-    50%  { opacity:0.5; }
-    90% { opacity:1; }
-  }
-  @-moz-keyframes animationName{
-    10%   { opacity:1; }
-    50%  { opacity:0.5; }
-    90% { opacity:1; }
-  }
-  @-webkit-keyframes animationName{
-    10%   { opacity:1; }
-    50%  { opacity:0.5; }
-    90% { opacity:1; }
-  }   
-  .elementToFadeInAndOut {
-     -webkit-animation: animationName 3s infinite;
-     -moz-animation: animationName 3s infinite;
-     -o-animation: animationName 3s infinite;
-      animation: animationName 3s infinite;
-  }
+}
+@-o-keyframes animationName{
+10%   { opacity:1; }
+50%  { opacity:0.5; }
+90% { opacity:1; }
+}
+@-moz-keyframes animationName{
+10%   { opacity:1; }
+50%  { opacity:0.5; }
+90% { opacity:1; }
+}
+@-webkit-keyframes animationName{
+10%   { opacity:1; }
+50%  { opacity:0.5; }
+90% { opacity:1; }
+}   
+.elementToFadeInAndOut {
+    -webkit-animation: animationName 3s infinite;
+    -moz-animation: animationName 3s infinite;
+    -o-animation: animationName 3s infinite;
+    animation: animationName 3s infinite;
+}
 
+@media screen and (max-width: 425px) {
+    #infoData{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+        grid-row-gap: 3rem;
+        margin: 0 auto;
+        position: relative;
+        top: 1.5rem;
+    }
+
+    #chart{
+        width: 95%;
+        float: left;
+        margin-right: 0rem;
+        pointer-events:all;
+    }
+
+    #socialLinks{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 100%;
+        align-items: center;
+        justify-items: center;
+        width: 50%;
+        margin: 0  auto;
+    }
+    .instaPic{
+        width:4rem;
+        cursor: pointer;
+    }
+    .githubPic{
+        width:4rem;
+        cursor: pointer;
+    }
+    .youtubePic{
+        width:5.5rem;
+        cursor: pointer;
+    }
+}
