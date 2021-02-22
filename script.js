@@ -26,12 +26,34 @@ jQuery.extend({
               //console.log(time)
           }
       });
+    //setTimeout($.getValues(), 29000)
+    return result;
+  }
+});
+
+jQuery.extend({
+  getEth: function() {
+      var result = null;
+      var temp = null
+      $.ajax({
+          url: 'https://poloniex.com/public?command=returnOrderBook&currencyPair=USDT_ETH&depth=10',
+          type: 'get',
+          dataType: 'json',
+          async: false,
+          success: function(data) {
+            $(".apexcharts-title-text").text("Live ETH Price: $"+parseFloat(data.asks[0][0]).toFixed(4))
+              result = data
+          }
+      });
     //setTimeout($.getValues, 29000)
     return result;
   }
 });
 
-
+var sleep = time => new Promise(resolve => setTimeout(resolve, time))
+var poll = (promiseFn, time) => promiseFn().then(
+             sleep(time).then(() => poll(promiseFn, time)))
+poll(() => new Promise(() => $.getEth()), 1000)
 
 var sleep = time => new Promise(resolve => setTimeout(resolve, time))
 var poll = (promiseFn, time) => promiseFn().then(
@@ -74,7 +96,10 @@ function applyDom(){
   $('#timestamp').html(s[3]);
   window.values = netWorthArray
   //setTimeout(applyDom(),80000)
+
+  
 }
+
 applyDom()
 /*
 setTimeout(
@@ -95,7 +120,7 @@ $('.youtubePic').click(function(){
     window.open('https://www.youtube.com/channel/UCFGPA5ZV9BZIhR7w8EbS-hg', '_blank'); 
 })
 
-
+let charttitle = 'test'
 var options = {
   series: [{
   name: "Balance",
@@ -115,6 +140,18 @@ markers: {
   hover: {
     sizeOffset: 4
   }
+},
+title: {
+  text: $.getEth().asks[0][0],
+  align: 'left',
+  margin: 10,
+  offsetX: 90,
+  offsetY: 25,
+  style: {
+    fontSize:  '12px',
+    fontWeight:  'bold',
+    color:  '#FFFFFF'
+  },
 },
 xaxis:{
  labels: {
