@@ -70,6 +70,7 @@ body{
 #chart{
     margin-right: 2rem;
     pointer-events:all;
+    background-image: url("https://i.pinimg.com/originals/53/58/32/535832ca810f135232509afed3e734e5.gif");
 }
 
 #chart:hover {
@@ -149,7 +150,6 @@ html, body {
         float: left;
         margin-right: 0rem;
         pointer-events:all;
-	background-image: url("https://i.pinimg.com/originals/53/58/32/535832ca810f135232509afed3e734e5.gif");
     }
 
     #socialLinks{
