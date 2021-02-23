@@ -128,6 +128,11 @@ body{
     animation: animationName 3s infinite;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 @media screen and (max-width: 425px) {
     #infoData{
         display: grid;
