@@ -70,7 +70,10 @@ body{
 #chart{
     margin-right: 2rem;
     pointer-events:all;
-    background-image: url("https://i.pinimg.com/originals/53/58/32/535832ca810f135232509afed3e734e5.gif");
+    background-image: url("https://data.whicdn.com/images/266613994/original.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+	    
 }
 
 #chart:hover {
