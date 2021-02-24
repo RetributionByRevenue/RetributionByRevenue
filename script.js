@@ -13,6 +13,7 @@ jQuery.extend({
           type: 'get',
           dataType: 'json',
           async: false,
+          cache: false,
           success: function(data) {
               result = data;
               temp = (result.feed.entry[0].content.$t)
@@ -32,9 +33,11 @@ jQuery.extend({
           type: 'get',
           dataType: 'json',
           async: false,
+          cache: false,
           success: function(data) {
             temp = "Live Eth Price: $"+(parseFloat(data.asks[0][0]).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
             result = data
+            //console.log(1)
             $(".apexcharts-title-text").text(temp)
           }
       });
@@ -42,7 +45,7 @@ jQuery.extend({
   }
 });
 
-/*
+
 //Non Blocking Polling
 var sleep = time => new Promise(resolve => setTimeout(resolve, time))
 var poll = (promiseFn, time) => promiseFn().then(
@@ -54,7 +57,6 @@ var sleep = time => new Promise(resolve => setTimeout(resolve, time))
 var poll = (promiseFn, time) => promiseFn().then(
              sleep(time).then(() => poll(promiseFn, time)))
 poll(() => new Promise(() => $.getValues()), 10000)
-*/
 
 window.values = null
 
