@@ -46,7 +46,7 @@ jQuery.extend({
 var sleep = time => new Promise(resolve => setTimeout(resolve, time))
 var poll = (promiseFn, time) => promiseFn().then(
              sleep(time).then(() => poll(promiseFn, time)))
-poll(() => new Promise(() => $.getEth()), 1000)
+poll(() => new Promise(() => $.getEth()), 10000)
 
 //Non Blocking Polling
 var sleep = time => new Promise(resolve => setTimeout(resolve, time))
