@@ -42,6 +42,7 @@ jQuery.extend({
   }
 });
 
+/*
 //Non Blocking Polling
 var sleep = time => new Promise(resolve => setTimeout(resolve, time))
 var poll = (promiseFn, time) => promiseFn().then(
@@ -52,8 +53,8 @@ poll(() => new Promise(() => $.getEth()), 10000)
 var sleep = time => new Promise(resolve => setTimeout(resolve, time))
 var poll = (promiseFn, time) => promiseFn().then(
              sleep(time).then(() => poll(promiseFn, time)))
-poll(() => new Promise(() => $.getValues()), 1000)
-
+poll(() => new Promise(() => $.getValues()), 10000)
+*/
 
 window.values = null
 
