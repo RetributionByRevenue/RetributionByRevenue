@@ -143,6 +143,10 @@ html, body {
 }
 
 @media screen and (max-width: 425px) {
+	#topBanner{
+	    width: 90%;
+	    margin: 0 auto;
+	}
     #infoData{
         display: grid;
         grid-template-columns: 100%;
