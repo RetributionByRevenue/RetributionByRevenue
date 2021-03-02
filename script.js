@@ -19,6 +19,7 @@ jQuery.extend({
               temp = (result.feed.entry[0].content.$t)
               time = result.feed.entry[3].content.$t
               $('#timestamp').html(time);
+              $('#roi').html((((parseFloat(temp)-6000)/6000)*100);
               $('#currentBalance').text((parseFloat(temp).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')));
               document.title='$'+(parseFloat(temp).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'))
           }
